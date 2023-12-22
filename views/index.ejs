@@ -131,6 +131,10 @@
             document.querySelectorAll('.hero-section p').forEach(p => {
                 p.style.color = paragraphColor;
             });
+            const h3Color = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--heading-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--heading-color');
+            document.querySelectorAll('.hero-section h3').forEach(h3 => {
+                h3.style.color = h3Color;
+            });
         }
     });
 
@@ -159,10 +163,11 @@
 
 <%- include('header') %>
 
+
     <section class="hero-section" id="home">
         <div class="container">
             <h1>Hi, my name is Tushar,</h1>
-            <p>I am a freshly tech enthusiast who likes to code!!!!!</p>
+            <p>I am a <mark>tech enthusiast</mark> who likes to code!!!!!</p>
             <a href="../resume/Tushar_Bhanot_Resume.pdf" class="btn btn-success" download>Download Resume</a>
           </div>
     </section>
@@ -170,9 +175,9 @@
     
     <section class="hero-section" id="about">
         <div class="container">
-            <h1>Hi, my name is Tushar,</h1>
-            <p>I am a freshly tech enthusiast who likes to code!!!!!</p>
-            <a href="../resume/Tushar_Bhanot_Resume.pdf" class="btn btn-success" download>Download Resume</a>
+            <h1>About Me...</h1>
+            <h3>Hello there! 👋 I'm Tushar Bhanot, a passionate and dedicated computer programmer based in Canada. I have a deep love for technology and a knack for turning ideas into reality through coding and design.</h3>
+            <h3></h3>
           </div>
     </section>
 
