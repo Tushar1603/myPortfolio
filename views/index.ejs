@@ -5,10 +5,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
-      
-
-
-
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -24,24 +20,25 @@
         }
 
         h1 {
-            color: #000000;
+            color: var(--heading-color);
         }
 
         .hero-section {
             background: url('your-image-url.jpg') center/cover no-repeat;
-            color: #767676;
+            color: var(--para-color);
             text-align: center;
             padding: 150px 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            transition: color 0.3s; 
         }
 
         .hero-section h1 {
             font-size: 3em;
             margin-bottom: 20px;
-            color: #000000;
+            color: var(--heading-color);
         }
 
         .hero-section p {
@@ -49,76 +46,111 @@
             margin-bottom: 30px;
         }
 
+
         .btn-primary {
             background-color: #007bff;
             border-color: #007bff;
             font-size: 1.2em;
         }
 
-
-
         /* ---------------------------------------Toggle button CSS-------------------------------------------------------- */
 
         :root {
-        --background-light: #f8f9fa;
-        --background-dark: #343a40;
-        --text-light: #333;
-        --text-dark: #fff;
-        --link-light: #444;
-        --link-dark: #444;
-    }
-        
+            --background-light: #f8f9fa;
+            --background-dark: #343a40;
+            --text-light: #333;
+            --text-dark: #fff;
+            --link-light: #444;
+            --link-dark: #444;
+            --heading-color: #000000;
+            --heading-color-dark: #d1d1d1; 
+            --para-color: #575757;
+            --para-color-dark: #8e8e8e;
+
+        }
+
         #toggle-mode-button {
-        background-color: var(--link-light);
-        color: var(--background-light);
-        border: 2px solid var(--link-light);
-        padding: 10px 15px;
-        font-size: 1em;
-        cursor: pointer;
-        transition: background-color 0.3s, color 0.3s;
-    }
+            background-color: var(--link-light);
+            color: var(--background-light);
+            border: 2px solid var(--link-light);
+            padding: 10px 15px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-    #toggle-mode-button:hover {
-        background-color: var(--background-light);
-        color: var(--link-light);
-    }
+        #toggle-mode-button:hover {
+            background-color: var(--background-light);
+            color: var(--link-light);
+        }
 
-    #toggle-mode-button.dark-mode {
-        background-color: var(--link-dark);
-        border-color: var(--link-dark);
-        color: var(--background-dark);
-    }
+        #toggle-mode-button.dark-mode {
+            background-color: var(--link-dark);
+            border-color: var(--link-dark);
+            color: var(--background-dark);
+        }
 
-    #toggle-mode-button.dark-mode:hover {
-        background-color: var(--background-dark);
-        color: var(--link-dark);
-    }
+        #toggle-mode-button.dark-mode:hover {
+            background-color: var(--background-dark);
+            color: var(--link-dark);
+        }
 
-    /* -------------------------Toggle button CSS ends------------------------------------------ */
+        /* -------------------------Toggle button CSS ends------------------------------------------ */
 
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-      const body = document.body;
-      const toggleButton = document.getElementById('toggle-mode-button'); 
+    document.addEventListener('DOMContentLoaded', function () {
+        const body = document.body;
+        const toggleButton = document.getElementById('toggle-mode-button');
 
-      const isDarkMode = localStorage.getItem('darkMode') === 'true';
-      setTheme(isDarkMode);
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        setTheme(isDarkMode);
 
-      toggleButton.addEventListener('click', function () {
-          const newMode = !body.classList.contains('dark-mode');
-          setTheme(newMode);
-          localStorage.setItem('darkMode', newMode);
-      });
+        toggleButton.addEventListener('click', function () {
+            const newMode = !body.classList.contains('dark-mode');
+            setTheme(newMode);
+            localStorage.setItem('darkMode', newMode);
+        });
 
-      function setTheme(isDarkMode) {
-          body.classList.toggle('dark-mode', isDarkMode);
-          body.style.backgroundColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--background-dark') : getComputedStyle(document.documentElement).getPropertyValue('--background-light');
-          body.style.color = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--text-dark') : getComputedStyle(document.documentElement).getPropertyValue('--text-light');
-      }
-  });
+        function setTheme(isDarkMode) {
+            body.classList.toggle('dark-mode', isDarkMode);
+            body.style.backgroundColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--background-dark') : getComputedStyle(document.documentElement).getPropertyValue('--background-light');
+            body.style.color = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--text-dark') : getComputedStyle(document.documentElement).getPropertyValue('--text-light');
+
+            const headingColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--heading-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--heading-color');
+            document.querySelectorAll('.hero-section h1').forEach(h1 => {
+                h1.style.color = headingColor;
+            });
+
+            const paragraphColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--para-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--para-color');
+            document.querySelectorAll('.hero-section p').forEach(p => {
+                p.style.color = paragraphColor;
+            });
+        }
+    });
+
+    const navLinks = document.querySelectorAll('.navbar-nav a.nav-link');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
 </script>
 
 
@@ -128,6 +160,33 @@
 <%- include('header') %>
 
     <section class="hero-section" id="home">
+        <div class="container">
+            <h1>Hi, my name is Tushar,</h1>
+            <p>I am a freshly tech enthusiast who likes to code!!!!!</p>
+            <a href="../resume/Tushar_Bhanot_Resume.pdf" class="btn btn-success" download>Download Resume</a>
+          </div>
+    </section>
+
+    
+    <section class="hero-section" id="about">
+        <div class="container">
+            <h1>Hi, my name is Tushar,</h1>
+            <p>I am a freshly tech enthusiast who likes to code!!!!!</p>
+            <a href="../resume/Tushar_Bhanot_Resume.pdf" class="btn btn-success" download>Download Resume</a>
+          </div>
+    </section>
+
+
+    <section class="hero-section" id="portfolio">
+        <div class="container">
+            <h1>Hi, my name is Tushar,</h1>
+            <p>I am a freshly tech enthusiast who likes to code!!!!!</p>
+            <a href="../resume/Tushar_Bhanot_Resume.pdf" class="btn btn-success" download>Download Resume</a>
+          </div>
+    </section>
+
+
+    <section class="hero-section" id="contact">
         <div class="container">
             <h1>Hi, my name is Tushar,</h1>
             <p>I am a freshly tech enthusiast who likes to code!!!!!</p>

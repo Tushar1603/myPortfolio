@@ -10,8 +10,8 @@ router.get('/index', function(req, res, next) {
   res.render('index', { title: 'Home' });
 });
 
-router.get('/profile', function(req, res, next) {
-  res.render('profile', { title: 'About me' });
+router.get('/portfolio', function(req, res, next) {
+  res.render('portfolio', { title: 'My portolio' });
 });
 
 router.get('/contact', function(req, res, next) {
