@@ -15,6 +15,29 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
+
+
+        .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    color: #007bff;
+}
+
+.card-text {
+    color: #555;
+}
+
+
         section {
             padding: 4em 0;
         }
@@ -52,6 +75,7 @@
             border-color: #007bff;
             font-size: 1.2em;
         }
+        
 
         /* ---------------------------------------Toggle button CSS-------------------------------------------------------- */
 
@@ -161,6 +185,7 @@
         });
     });
 
+
 </script>
 
 
@@ -174,7 +199,7 @@
         <div class="container">
             <h1>Hi, my name is <span style="color: #54B4D3;">Tushar</span>,</h1>
             <p>I am a <mark>tech enthusiast</mark> who likes to code!!!!!</p>
-            <a href="../resume/Tushar_Bhanot_Resume.pdf" class="btn btn-success" download>Download Resume</a>
+            <a href="../resume/Tushar_Bhanot_Resume" class="btn btn-success" download>Download Resume</a>
           </div>
     </section>
 
@@ -196,7 +221,30 @@
     <section class="hero-section" id="portfolio">
         <div class="container">
             <h1>My portfolio, some skills I know</h1>
-            <p>Here are the languages i like to use</p>
+            <div class="container mt-5">
+                <div class="card-deck">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Web Development</h2>
+                            <p class="card-text">HTML, CSS, JavaScript, React, Node.js, etc.</p>
+                        </div>
+                    </div>
+        
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Graphic Design</h2>
+                            <p class="card-text">Adobe Photoshop, Illustrator, Canva, etc.</p>
+                        </div>
+                    </div>
+        
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Project Management</h2>
+                            <p class="card-text">Agile, Scrum, Jira, Trello, etc.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
           </div>
     </section>
 

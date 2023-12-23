@@ -21,7 +21,7 @@
             color: #fff;
             padding: 1em 0;
             text-align: center;
-            padding-top: 5%;
+            margin-top: 5vh;
         }
 
         .navbar-brand{
@@ -72,6 +72,10 @@
             bottom: 0;
             width: 100%;
         }
+
+        .navbar-scrolled {
+            background-color: rgba(51, 51, 51, 0.719) !important; 
+        }
       
     </style>
 </head>
@@ -115,6 +119,14 @@
         <h6>Web Designer | Software Developer</h6>
     </header>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            window.addEventListener("scroll", function () {
+                var navbar = document.querySelector(".navbar");
+                navbar.classList.toggle("navbar-scrolled", window.scrollY > 0);
+            });
+        });
+    </script>
    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
