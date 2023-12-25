@@ -24,7 +24,7 @@
         .card {
             position: relative;
             width: 190px;
-            height: 254px;
+            height: 295px;
             background-color: #000;
             display: flex;
             flex-direction: column;
@@ -42,10 +42,10 @@
             inset: 0;
             left: -5px;
             margin: auto;
-            width: 200px;
-            height: 264px;
+            width: 215px;
+            height: 315px;
             border-radius: 10px;
-            background: linear-gradient(-45deg,  #70ffbfca 0%, #54B4D3 100% );
+            background: linear-gradient(-75deg,  #70ffbfca 0%, #54B4D3 100% );
             z-index: -10;
             pointer-events: none;
             transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -92,7 +92,7 @@
             color: var(--heading-color);
         }
 
-        .hero-section, .spacer {
+        .hero-section{
             background: url('your-image-url.jpg') center/cover no-repeat;
             color: var(--para-color);
             text-align: center;
@@ -102,6 +102,11 @@
             align-items: center;
             justify-content: center;
             transition: color 0.3s; 
+        }
+
+        .about-item{
+            margin-top: 12%;
+            margin-bottom: 12%;
         }
 
         .hero-section h1 {
@@ -136,7 +141,7 @@
             --heading-color-dark: #d1d1d1; 
             --para-color: #575757;
             --para-color-dark: #8e8e8e;
-            --container-color: #fff;
+            --container-color: #f8f8f8ec;
             --container-color-dark: #333333;
 
         }
@@ -195,6 +200,11 @@
             margin-top: 10%;
             margin-bottom: 10%;
         }
+
+        #portfolio{
+            padding-top: 16%;
+            margin-bottom: 8%;
+        }
         
         
         
@@ -232,6 +242,10 @@
             const h3Color = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--heading-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--heading-color');
             document.querySelectorAll('.hero-section h3').forEach(h3 => {
                 h3.style.color = h3Color;
+            });
+            const h2Color = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--heading-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--heading-color');
+            document.querySelectorAll('.hero-section h2').forEach(h2 => {
+                h2.style.color = h2Color;
             });
             const cardColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--container-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--container-color');
             document.querySelectorAll('.card').forEach(card => {
@@ -300,15 +314,28 @@ document.addEventListener('DOMContentLoaded', function () {
     
     <section class="hero-section fade-in" id="about">
         <div class="container">
+            <div class="about-item">
             <h1>About Me</h1>
             <h3>Hello there! I'm a passionate and dedicated computer programmer based in Canada. I have a deep love for technology and a knack for turning ideas into reality through coding and design.</h3>
-            <div class="spacer">
+            </div>
+            <div class="about-item">
                 <h1>My Approach</h1>
                 <h3> Coding is not just a skill for me, rather it is a way for me to bring innovations and ideas to reality in this virtual era. I really like to think and understand the "why" behind any question and am always trying to find the easiest and shortest answer to those "whys".</h3>
             </div>
+            <div class="about-item">
                 <h1>Beyond Coding</h1>
                 <h3>Outside of this computer realm I can be seen listening to podcasts and music. Also, to refreshen my body and eyes I usually take some walks or drive around to some cool and peacful places, P.S: i like to be around nature a lot. Lastly, looking up for and reading about latest news on tech is a must in my regular tasks.</h3>
           </div>
+          <div class="about-item">
+                <h1>Leadership Roles</h1>
+                <h3>As a group leader for both Node.js and Swift projects, I played a pivotal role in overseeing the development of a Discord bot and an iOS task manager app, efficiently coordinating team efforts, delegated tasks, and ensured effective communication and timeline management, showcasing strong problem-solving skills and effective communication that contributed to the successful development of an iOS task manager app and the discord chatbot.</h3>
+            </div>
+          <div class="about-item">
+                <h1>Development Tools</h1>
+                <h3>Experience in using Visual Studio Code for developing amazing codes. Experience with IntelliJ idea for creating amazing java codes. Well efficient at using GitHub and GitHub desktop as a version control coding environment, host and collaborate with teams.</h3>
+            </div>
+        </div>
+          
     </section>
 
 
@@ -320,21 +347,27 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div class="card">
                         <div class="card-body">
                             <h2 class="card-title">Web Development</h2>
-                            <p class="card-text">HTML, CSS, JavaScript, React, Node.js, etc.</p>
+                            <p class="card-text">Proficient in HTML and CSS for creating visually appealing web interfaces. Skilled in
+                                Node.js for building scalable server-side applications and utilizing EJS and HBS
+                                templates for dynamic web pages.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Programming Languages</h2>
+                            <p class="card-text">Proficient in a versatile array of programming languages, including Java, Swift, C#,
+                                C++, and PHP. Possessing a solid foundation in object-oriented programming with
+                                Java, expertise in developing iOS applications using Swift.</p>
                         </div>
                     </div>
         
                     <div class="card">
                         <div class="card-body">
-                            <h2 class="card-title">Graphic Design</h2>
-                            <p class="card-text">Adobe Photoshop, Illustrator, Canva, etc.</p>
-                        </div>
-                    </div>
-        
-                    <div class="card">
-                        <div class="card-body">
-                            <h2 class="card-title">Project Management</h2>
-                            <p class="card-text">Agile, Scrum, Jira, Trello, etc.</p>
+                            <h2 class="card-title">Software Proficiency</h2>
+                            <p class="card-text">Experienced in IntelliJ IDEA for efficient coding, Jira for project management, and
+                                GitHub for version control. Skilled at using npm for Node.js dependencies, and
+                                proficient with Visual Studio Code as a streamlined text editor.</p>
                         </div>
                     </div>
                 </div>
