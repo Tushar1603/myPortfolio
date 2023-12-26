@@ -144,6 +144,8 @@
             --para-color-dark: #8e8e8e;
             --container-color: #f8f8f8ec;
             --container-color-dark: #333333;
+            --text-field-contact-color: white;
+            --text-field-contact-color-dark: #575757;
 
         }
 
@@ -209,18 +211,6 @@
         
 
 #contact {       
-        h1 {
-          color: #007bff; 
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .professional-text {    
-            color: #555;
-            font-size: 18px;
-            line-height: 1.5;
-            margin-bottom: 30px;
-        }
 
         form {
             max-width: 600px;
@@ -259,6 +249,11 @@
         button:hover {
             background-color: #218838; 
         }
+
+        .form-control{
+            background-color: --text-field-contact-color;
+        }
+        
     }
 
         
@@ -304,7 +299,12 @@
             const cardColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--container-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--container-color');
             document.querySelectorAll('.card').forEach(card => {
             card.style.backgroundColor = cardColor;
-});
+            });
+            const contactFieldColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--text-field-contact-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--text-field-contact-color');
+            document.querySelectorAll('.form-control').forEach(inputField => {
+                inputField.style.backgroundColor = contactFieldColor;
+            });
+
 
         }
     });
@@ -443,11 +443,10 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="container">
             <h1>Let's Connect</h1>
             <h3>Contact me through the message box below</h3>
-            <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
 
-                <form action="mailto:your@email.com" method="post" enctype="text/plain">
+                <form action="mailto:bhanottushar1603@gmail.com" method="post" enctype="text/plain">
                     <div class="form-group">
                         <label for="name">Your Name:</label>
                         <input type="text" id="name" name="name" class="form-control" required>
@@ -463,7 +462,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <textarea id="message" name="message" rows="4" class="form-control" required></textarea>
                     </div>
 
-                    <input type="hidden" name="to" value="xyz123@email.com">
+                    <input type="hidden" name="to" value="bhanottushar1603@gmail.com">
 
                     <button type="submit" class="btn btn-success">Submit</button>
                 </form>
