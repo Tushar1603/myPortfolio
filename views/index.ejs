@@ -255,6 +255,8 @@
 
             .form-control{
                 background-color: var(--text-field-contact-color);
+                color: var(--container-color);
+                transition: 0.3s;
             }
 
             .form-group label{
@@ -343,12 +345,11 @@
             form.style.backgroundColor = borderFormColor;
             });
 
-            // this is for setting the color of the text inside the input fields in the class named form-group.
-            const formInputColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--heading-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--heading-color');
-            document.querySelectorAll('.form-group').forEach(input => {
-            input.style.backgroundColor = formInputColor;
-            });
-
+            // this will set the color of the texts in the input tag of the code using different colors for dark/light mode within the class named .form-control
+            const contactFieldTextColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--text-field-contact-color') : getComputedStyle(document.documentElement).getPropertyValue('--text-field-contact-color-dark');
+            document.querySelectorAll('.form-control').forEach(inputField => {
+            inputField.style.color = contactFieldTextColor;
+        });
         }
     });
 
