@@ -301,34 +301,52 @@
             body.style.backgroundColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--background-dark') : getComputedStyle(document.documentElement).getPropertyValue('--background-light');
             body.style.color = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--text-dark') : getComputedStyle(document.documentElement).getPropertyValue('--text-light');
 
+            // this is for all the h1 tags of the .hero-section
             const headingColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--heading-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--heading-color');
             document.querySelectorAll('.hero-section h1').forEach(h1 => {
                 h1.style.color = headingColor;
             });
 
+            // this is for all the p tags of the .hero-section
             const paragraphColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--para-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--para-color');
             document.querySelectorAll('.hero-section p').forEach(p => {
                 p.style.color = paragraphColor;
             });
+
+            // this is for all the h3 tags of the .hero-section
             const h3Color = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--heading-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--heading-color');
             document.querySelectorAll('.hero-section h3').forEach(h3 => {
                 h3.style.color = h3Color;
             });
+
+            // this is for all the h2 tags of the .hero-section
             const h2Color = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--heading-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--heading-color');
             document.querySelectorAll('.hero-section h2').forEach(h2 => {
                 h2.style.color = h2Color;
             });
+
+            // this is for setting the background the card having a .card class, as it finds the code with id card and then the element within it with the name card and affects all those card named sections.
             const cardColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--container-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--container-color');
             document.querySelectorAll('.card').forEach(card => {
             card.style.backgroundColor = cardColor;
             });
+
+            // this is for setting the background-color of the input field in the code that has .form-control class
             const contactFieldColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--text-field-contact-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--text-field-contact-color');
             document.querySelectorAll('.form-control').forEach(inputField => {
                 inputField.style.backgroundColor = contactFieldColor;
             });
+
+            // this will set the border color for the form that is present within the id named project.
             const borderFormColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--border-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--border-color');
             document.querySelectorAll('#project').forEach(form => {
             form.style.backgroundColor = borderFormColor;
+            });
+
+            // this is for setting the color of the text inside the input fields in the class named form-group.
+            const formInputColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--heading-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--heading-color');
+            document.querySelectorAll('.form-group').forEach(input => {
+            input.style.backgroundColor = formInputColor;
             });
 
         }
