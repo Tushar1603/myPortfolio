@@ -148,6 +148,7 @@
             --text-field-contact-color-dark: #575757;
             --form-contact-bg-color: white;
             --form-contact-bg-color-dark: #444;
+            --border-color: 0 0 10px rgba(105, 105, 105, 0.791);
         }
 
         #toggle-mode-button {
@@ -216,10 +217,9 @@
         form {
             max-width: 600px;
             margin: 0 auto;
-            background-color: var(--container-color);
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: var(--border-color);
         }
 
         label {
@@ -233,7 +233,7 @@
             padding: 10px;
             margin-top: 5px;
             margin-bottom: 15px;
-            border: 1px solid #ced4da;
+            border: 1px solid #9b9b9b;
             border-radius: 4px;
             box-sizing: border-box;
         }
@@ -252,7 +252,7 @@
         }
 
         .form-control{
-            background-color: --text-field-contact-color;
+            background-color: var(--text-field-contact-color);
         }
 
         margin-top: 8%;
@@ -263,6 +263,10 @@
 
     #contact .container + .row {
         background-color: var(--background-light);
+    }
+
+    .row{
+        margin-top: 3%;
     }
     
 
@@ -316,6 +320,11 @@
             document.querySelectorAll('.form-control').forEach(inputField => {
                 inputField.style.backgroundColor = contactFieldColor;
             });
+            const borderFormColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--border-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--border-color');
+            document.querySelectorAll('.project').forEach(form => {
+    form.style.backgroundColor = borderFormColor;
+});
+
         }
     });
 
@@ -456,7 +465,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="row justify-content-center">
             <div class="col-md-8">
 
-                <form action="mailto:bhanottushar1603@gmail.com" method="post" class="form">
+                <form action="mailto:bhanottushar1603@gmail.com" method="post">
                     <div class="form-group">
                         <label for="name">Your Name:</label>
                         <input type="text" id="name" name="name" class="form-control" required>
