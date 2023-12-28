@@ -1,0 +1,2 @@
+for portfolio section, after 575px size the responsiveness is fucked up, so will work on it from 574px and, will have to change all the way till 1200px as the text gets the hell out of the boxes.
+Afterwards, starting from 1704px size, the responsiveness is fucked up again all the way till very end, will try to adust for the devices in between 574 to 1200 and devices above 1704 aswell.

@@ -1,3 +1,4 @@
+@ -1,553 +1,602 @@
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,356 +6,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: var(--background-light);
-            color: var(--text-light);
-            transition: background-color 0.3s, color 0.3s;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(rgba(138, 138, 138, 0.171) 0.33vh, transparent 0);
-            background-size: 5vh 5vh;
-            background-position: -0.83px -0.83px
-            
-        }
-        
-        #portfolio{
-
-            .card {
-                position: relative;
-                width: auto;
-                height: 49.17vh;
-                background-color: #000;
-                display: flex;
-                flex-direction: column;
-                justify-content: end;
-                padding: 2vh;
-                gap: 2vh;
-                border-radius: 1.33vh;
-                cursor: pointer;
-                color: white;
-            }   
-
-            .card::before {
-                content: '';
-                position: absolute;
-                inset: 0;
-                left: -0.83vh;
-                margin: auto;
-                width: 35.83vh;
-                height: 52.5vh;
-                border-radius: 1.67vh;
-                background: linear-gradient(-75deg,  #70ffbfca 0%, #54B4D3 100% );
-                z-index: -10;
-                pointer-events: none;
-                transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            }
-
-            .card::after {
-                content: "";
-                z-index: -1;
-                position: absolute;
-                inset: 0;
-                background: linear-gradient(-45deg,  #70ffbfca 0%, #54B4D3 100% );
-                transform: translate3d(0, 0, 0) scale(0.95);
-                filter: blur(3.33vh);
-            }
-
-            .heading {
-                font-size: 3.33vh;
-                text-transform: capitalize;
-                font-weight: 700;
-            }
-
-            .card p:not(.heading) {
-                font-size: 2.33vh;
-            }
-
-            .card p:last-child {
-                color: #e81cff;
-                font-weight: 600;
-            }
-
-            .card:hover::after {
-                filter: blur(6.66vh);
-            }
-
-            .card:hover::before {
-                transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
-            }
-        }   
-
-        section {
-            padding: 4em 0;
-        }
-
-        h1 {
-            color: var(--heading-color);
-        }
-
-        .hero-section{
-            background: url('your-image-url.jpg') center/cover no-repeat;
-            color: var(--para-color);
-            text-align: center;
-            padding: 25vh 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: color 0.3s; 
-        }
-
-        .about-item{
-            margin-top: 12%;
-            margin-bottom: 12%;
-        }
-
-        .hero-section h1 {
-            font-size: 3em;
-            margin-bottom: 3.33vh;
-            color: var(--heading-color);
-        }
-
-        .hero-section p {
-            font-size: 1.5em;
-            margin-bottom: 5vh;
-        }
-
-
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-            font-size: 1.2em;
-        }
-        
-
-        /* ---------------------------------------Toggle button CSS-------------------------------------------------------- */
-
-        :root {
-            --background-light: #f8f9fa;
-            --background-dark: #343a40;
-            --text-light: #333;
-            --text-dark: #fff;
-            --link-light: #444;
-            --link-dark: #444;
-            --heading-color: #000000;
-            --heading-color-dark: #d1d1d1; 
-            --para-color: #575757;
-            --para-color-dark: #8e8e8e;
-            --container-color: #f8f8f8ec;
-            --container-color-dark: #333333;
-            --text-field-contact-color: white;
-            --text-field-contact-color-dark: #575757;
-            --form-contact-bg-color: white;
-            --form-contact-bg-color-dark: #444;
-            --border-color: 0 0 1.67vh rgba(105, 105, 105, 0.791);
-        }
-
-        #toggle-mode-button {
-            background-color: var(--link-light);
-            color: var(--background-light);
-            border: 0.33vh solid var(--link-light);
-            padding: 1.67vh 2.5vh;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        #toggle-mode-button:hover {
-            background-color: var(--background-light);
-            color: var(--link-light);
-        }
-
-        #toggle-mode-button.dark-mode {
-            background-color: var(--link-dark);
-            border-color: var(--link-dark);
-            color: var(--background-dark);
-        }
-
-        #toggle-mode-button.dark-mode:hover {
-            background-color: var(--background-dark);
-            color: var(--link-dark);
-        }
-
-        /* -------------------------Toggle button CSS ends------------------------------------------ */
-
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        .container p mark {
-            background-color: #70ffbfca; 
-            color: #333; 
-}
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(3.33vh);
-            transition: opacity 0.9s ease-in, transform 0.9s ease-out;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        
-        
-        #home{
-            margin-top: 10%;
-            margin-bottom: 10%;
-        }
-
-        #portfolio{
-            padding-top: 16%;
-            margin-bottom: 8%;
-        }
-        
-
-        #contact {       
-
-            form {
-                max-width: 100vh;
-                margin: 0 auto;
-                padding: 3.33vh;
-                border-radius: 1.33vh;
-                box-shadow: var(--border-color);
-            }
-
-            label {
-                display: block;
-                margin-top: 1.67vh;
-                font-weight: bold;
-            }
-
-            input, textarea {
-                width: 100%;
-                padding: 1.67vh;
-                margin-top: 0.83vh;
-                margin-bottom: 2.5vh;
-                border: 0.17vh solid #9b9b9b;
-                border-radius: 0.112vh;
-                box-sizing: border-box;
-            }
-
-            button {
-                background-color: #28a745; 
-                color: white;
-                padding: 2.01vh 3.33vh;
-                border: none;
-                border-radius: 0.67vh;
-                cursor: pointer;
-            }
-
-            button:hover {
-                background-color: #218838; 
-            }
-
-            .form-control{
-                background-color: var(--text-field-contact-color);
-                color: var(--container-color);
-                transition: 0.3s;
-            }
-
-            .form-group label{
-                color: rgb(169, 169, 169)
-            }
-
-            margin-top: 8%;
-
-            margin-bottom: 6%;
-        }   
-
-
-    #contact .container + .row {
-        background-color: var(--background-light);
-    }
-
-    .row{
-        margin-top: 3%;
-    }
-
-
-    #projects{
-        .card {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 66.67vh;
-  box-shadow: 0 1.67vh 3.33vh rgba(0, 0, 0, 0.2);
-  padding: 5.33vh;
-  overflow: hidden;
-  border-radius: 1.67vh;
-  background: #212121;
-  border: 0.33vh solid #313131;
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 3.33vh;
-  color: #e8e8e8;
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-}
-
-.content .heading {
-  font-weight: 700;
-  font-size: 5.33vh;
-}
-
-.content .para {
-  line-height: 1.5;
-}
-
-.content .btn {
-  color: #e8e8e8;
-  text-decoration: none;
-  padding: 1.67vh;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  background: #0974f1;
-  border-radius: 0.83vh;
-  box-shadow: 0 0.83ch 1.67vh rgba(0, 0, 0, 0.2);
-}
-
-.card:hover {
-  box-shadow: 0 0 3.33vh rgba(9, 117, 241, 0.8);
-  border-color: #0974f1;
-}
-
-.content .btn:hover {
-  outline: 0.33vh solid #e8e8e8;
-  background: transparent;
-  color: #e8e8e8;
-}
-
-.content .btn:active {
-  box-shadow: none;
-}
-
-    }
-
-
-
-
-
-    /* @media only screen and (min-width: 575px)  {
-    } */
-
-
-
-
-
-    
-
-    @media only screen and (min-width: 992px)  {
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -691,7 +342,7 @@
 }
 
     }
-}
+
         
     </style>
 </head>
@@ -891,7 +542,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <h1>My Projects</h1>
             <p>These are my projects</p>
             
-            <!-- <div class="card">
+            <div class="card">
               <div class="content">
                 <p class="heading">Card Hover Effect
                 </p><p class="para">
@@ -901,7 +552,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 </p>
                 <button class="btn">Read more</button>
               </div>
-            </div> -->
+            </div>
+
+            <div class="card">
+              <div class="content">
+                <p class="heading">Card Hover Effect
+                </p><p class="para">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi
+                  laboriosam at voluptas minus culpa deserunt delectus sapiente
+                  inventore pariatur
+                </p>
+                <button class="btn">Read more</button>
+              </div>
+            </div>
         </div>
     </section>
     
