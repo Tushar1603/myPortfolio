@@ -1061,7 +1061,6 @@
 
 
     #projects{
-
         .container {
         max-width: 1200px;
         margin: 0 auto;
@@ -1070,16 +1069,12 @@
     .card-container {
         display: flex;
         overflow-x: auto;
-        scrollbar-width: none; 
-        -ms-overflow-style: none; 
-    }
-    .card-container::-webkit-scrollbar {
-        display: none; 
+        height: 300px; 
     }
     .card {
         flex: 0 0 auto;
-        width: 300px;
-        height: 254px;
+        width: 320px;
+        height: 295px;
         position: relative;
         margin-right: 20px;
         padding: 20px;
@@ -1088,18 +1083,15 @@
         transition: 0.6;
         box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     }
-
     .card h2 {
         font-size: 18px;
         margin-bottom: 10px;
     }
-
     .card p {
         font-size: 14px;
         color: #666;
         margin-bottom: 15px;
     }
-
     .btn {
         display: inline-block;
         padding: 10px 15px;
@@ -1108,11 +1100,11 @@
         text-decoration: none;
         border-radius: 5px;
         position: absolute;
-            bottom: 10px;
-            right: 10px;
-            font-size: 75%;
+        bottom: 10px;
+        right: 10px;
+        font-size: 75%;
     }
-        }
+}
     }
         
     </style>
@@ -1315,13 +1307,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
             <div class="card-container">
                 <section class="card">
-                    <h2>Project 1</h2>
-                    <p>Description of Project 1 goes here. You can provide details about the project.</p>
+                    <h2>Task Manager: An iOS application</h2>
+                    <p>Developed a task manager app as a final swift project which keeps a check of upcoming and present tasks and aligns them into different categories as assigned by the user. Follows the crud based development and also authenticates the users.</p>
                     <a href="#" class="btn fab fa-github bg-success"> CODE></a>
                 </section>
                 <div class="card">
-                    <h2>Project 1</h2>
-                    <p>Description of Project 1 goes here. You can provide details about the project.</p>
+                    <h2>discordBot01: A discord chatbot</h2>
+                    <p>Made a discord chatbot as the final group project of js class in node.js. </p>
                     <a href="#" class="btn fab fa-github bg-success"> CODE></a>
                 </div>
                 <div class="card">

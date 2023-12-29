@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+
+body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-light);
+            color: var(--text-light);
+            transition: background-color 0.3s, color 0.3s;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(138, 138, 138, 0.171) 0.33vh, transparent 0);
+            background-size: 5vh 5vh;
+            background-position: -0.83px -0.83px
+            
+        }
+
+#projects{
+
+    .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.card-container {
+    display: flex;
+    overflow-x: auto;
+    height: 300px; 
+}
+.card {
+    flex: 0 0 auto;
+    width: 320px;
+    height: 295px;
+    position: relative;
+    margin-right: 20px;
+    padding: 20px;
+    background-color: var(--container-color);
+    border-radius: 8px;
+    transition: 0.6;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.card h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 75%;
+}
+
+.card-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .custom-scrollbar {
+            width: 12px;
+            background-color: #f1f1f1;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+
+        .custom-scrollbar-thumb {
+            background-color: #3498db;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    }
+        
+    </style>
+</head>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const body = document.body;
+        const toggleButton = document.getElementById('toggle-mode-button');
+
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        setTheme(isDarkMode);
+
+        toggleButton.addEventListener('click', function () {
+            const newMode = !body.classList.contains('dark-mode');
+            setTheme(newMode);
+            localStorage.setItem('darkMode', newMode);
+        });
+
+        function setTheme(isDarkMode) {
+            body.classList.toggle('dark-mode', isDarkMode);
+            body.style.backgroundColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--background-dark') : getComputedStyle(document.documentElement).getPropertyValue('--background-light');
+            body.style.color = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--text-dark') : getComputedStyle(document.documentElement).getPropertyValue('--text-light');
+
+            // this is for all the h1 tags of the .hero-section
+            const headingColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--heading-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--heading-color');
+            document.querySelectorAll('.hero-section h1').forEach(h1 => {
+                h1.style.color = headingColor;
+            });
+
+            // this is for all the p tags of the .hero-section
+            const paragraphColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--para-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--para-color');
+            document.querySelectorAll('.hero-section p').forEach(p => {
+                p.style.color = paragraphColor;
+            });
+
+            // this is for all the h3 tags of the .hero-section
+            const h3Color = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--heading-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--heading-color');
+            document.querySelectorAll('.hero-section h3').forEach(h3 => {
+                h3.style.color = h3Color;
+            });
+
+            // this is for all the h2 tags of the .hero-section
+            const h2Color = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--heading-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--heading-color');
+            document.querySelectorAll('.hero-section h2').forEach(h2 => {
+                h2.style.color = h2Color;
+            });
+
+            // this is for setting the background the card having a .card class, as it finds the code with id card and then the element within it with the name card and affects all those card named sections.
+            const cardColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--container-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--container-color');
+            document.querySelectorAll('.card').forEach(card => {
+            card.style.backgroundColor = cardColor;
+            });
+
+            // this is for setting the background-color of the input field in the code that has .form-control class
+            const contactFieldColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--text-field-contact-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--text-field-contact-color');
+            document.querySelectorAll('.form-control').forEach(inputField => {
+                inputField.style.backgroundColor = contactFieldColor;
+            });
+
+            // this will set the border color for the form that is present within the id named project.
+            const borderFormColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--border-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--border-color');
+            document.querySelectorAll('#project').forEach(form => {
+            form.style.backgroundColor = borderFormColor;
+            });
+
+            // this will set the color of the texts in the input tag of the code using different colors for dark/light mode within the class named .form-control
+            const contactFieldTextColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--text-field-contact-color') : getComputedStyle(document.documentElement).getPropertyValue('--text-field-contact-color-dark');
+            document.querySelectorAll('.form-control').forEach(inputField => {
+            inputField.style.color = contactFieldTextColor;
+        });
+    }
+});
+
+        const navLinks = document.querySelectorAll('.navbar-nav a.nav-link');
+
+        navLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const fadeElements = document.querySelectorAll('.fade-in');
+
+    function checkFade() {
+        fadeElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            const triggerPoint = windowHeight - windowHeight / 4; // Adjust as needed
+
+            if (rect.top <= triggerPoint) {
+                element.classList.add('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkFade);
+    window.addEventListener('resize', checkFade);
+    checkFade();
+});
+ 
+   </script>
+
+
+   <body>
+     
+   
+   <%- include('header') %>
+   
+   <section class="hero-section fade-in" id="projects">
+        <div class="container">
+            <h1>My Projects</h1>
+            <p>These are my projects</p>
+
+            <div class="card-container">
+                <section class="card">
+                    <h2>Task Manager: An iOS application</h2>
+                    <p>Developed a task manager app as a final swift project which keeps a check of upcoming and present tasks and aligns them into different categories as assigned by the user. Follows the crud based development and also authenticates the users.</p>
+                    <a href="#" class="btn fab fa-github bg-success"> CODE></a>
+                </section>
+                <div class="card">
+                    <h2>discordBot01: A discord chatbot</h2>
+                    <p>Made a discord chatbot as the final group project of js class in node.js. </p>
+                    <a href="#" class="btn fab fa-github bg-success"> CODE></a>
+                </div>
+                <div class="card">
+                    <h2>Project 1</h2>
+                    <p>Description of Project 1 goes here. You can provide details about the project.</p>
+                    <a href="#" class="btn fab fa-github bg-success"> CODE></a>
+                </div>
+                <div class="card">
+                    <h2>Project 1</h2>
+                    <p>Description of Project 1 goes here. You can provide details about the project.</p>
+                    <a href="#" class="btn fab fa-github bg-success"> CODE></a>
+                </div>
+                <div class="card">
+                    <h2>Project 1</h2>
+                    <p>Description of Project 1 goes here. You can provide details about the project.</p>
+                    <a href="#" class="btn fab fa-github bg-success"> CODE></a>
+                </div>
+            </div>
+
+            <div class="custom-scrollbar">
+                <div class="custom-scrollbar-thumb"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <%- include('footer') %>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        // Add custom scrollbar functionality
+        const cardContainer = document.querySelector('.card-container');
+        const scrollbarThumb = document.querySelector('.custom-scrollbar-thumb');
+
+        cardContainer.addEventListener('scroll', function () {
+            const scrollTop = cardContainer.scrollTop;
+            const scrollHeight = cardContainer.scrollHeight - cardContainer.clientHeight;
+            const percentage = (scrollTop / scrollHeight) * 100;
+            scrollbarThumb.style.height = percentage + '%';
+        });
+    </script>
+</body>.
+
+</html>
