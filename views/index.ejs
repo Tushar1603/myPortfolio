@@ -204,7 +204,7 @@
         
         
         #home{
-            margin-top: 10%;
+            margin-top: 8%;
             margin-bottom: 10%;
         }
 
@@ -297,7 +297,7 @@
     .card-container::-webkit-scrollbar {
         display: none; 
     }
-    .project-card {
+    .card {
         flex: 0 0 auto;
         width: 300px;
         height: 254px;
@@ -308,12 +308,12 @@
         box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     }
 
-    .project-card h2 {
+    .card h2 {
         font-size: 18px;
         margin-bottom: 10px;
     }
 
-    .project-card p {
+    .card p {
         font-size: 14px;
         color: #666;
         margin-bottom: 15px;
@@ -387,9 +387,60 @@
                 transform: rotate(-90deg) scaleX(2.44) scaleY(0.77);
             }
         }
+
+        #projects{
+            .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .card-container {
+            display: flex;
+            overflow-x: auto;
+            scrollbar-width: none; 
+            -ms-overflow-style: none; 
+        }
+        .card-container::-webkit-scrollbar {
+            display: none; 
+        }
+        .card {
+            flex: 0 0 auto;
+            width: 300px;
+            height: 254px;
+            position: relative;
+            margin-right: 20px;
+            padding: 20px;
+            background-color: var(--container-color);
+            border-radius: 8px;
+            transition: 0.6;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        }
+        .card h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 75%;
+        }
+    }
         
     }
 
+    /* this media tag is also done with all css for this webpage */
     @media only screen and (min-width: 379px) and (max-width: 574px) {
         #portfolio{
             .card{
@@ -444,8 +495,59 @@
                 transform: rotate(-90deg) scaleX(0.9) scaleY(0.77);
             }
         }
+
+        #projects{
+            .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .card-container {
+            display: flex;
+            overflow-x: auto;
+            scrollbar-width: none; 
+            -ms-overflow-style: none; 
+        }
+        .card-container::-webkit-scrollbar {
+            display: none; 
+        }
+        .card {
+            flex: 0 0 auto;
+            width: 300px;
+            height: 254px;
+            position: relative;
+            margin-right: 20px;
+            padding: 20px;
+            background-color: var(--container-color);
+            border-radius: 8px;
+            transition: 0.6;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        }
+        .card h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 75%;
+        }
+    }
     }
 
+    /* this media tag is done for all the css in website */
     @media only screen and (min-width: 575px) and (max-width: 767px) {
         #portfolio{
             .card {
@@ -510,9 +612,61 @@
                 transform: rotate(-90deg) scaleX(1.88) scaleY(0.77);
             }
         }
+
+        #projects{
+
+            .container {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 20px;
+            }
+            .card-container {
+                    display: flex;
+                    overflow-x: auto;
+                    scrollbar-width: none; 
+                    -ms-overflow-style: none; 
+            }
+            .card-container::-webkit-scrollbar {
+                    display: none; 
+            }
+            .card {
+                    flex: 0 0 auto;
+                    width: 300px;
+                    height: 254px;
+                    position: relative;
+                    margin-right: 20px;
+                    padding: 20px;
+                    background-color: var(--container-color);
+                    border-radius: 8px;
+                    transition: 0.6;
+                    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+            }
+            .card h2 {
+                    font-size: 18px;
+                    margin-bottom: 10px;
+            }
+            .card p {
+                    font-size: 14px;
+                    color: #666;
+                    margin-bottom: 15px;
+            }
+            .btn {
+                    display: inline-block;
+                    padding: 10px 15px;
+                    background-color: #3498db;
+                    color: #fff;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    position: absolute;
+                    bottom: 10px;
+                    right: 10px;
+                    font-size: 75%;
+            }
+        }
     }
 
 
+    /* this media tag is complete for all the css in website */
     @media only screen and (min-width: 768px) and (max-width: 991px) {
         #portfolio{
             .card {
@@ -577,9 +731,60 @@
                 transform: rotate(-90deg) scaleX(1.64) scaleY(0.77);
             }
         }
+        #projects{
+
+            .container {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 20px;
+            }
+            .card-container {
+                    display: flex;
+                    overflow-x: auto;
+                    scrollbar-width: none; 
+                    -ms-overflow-style: none; 
+            }
+            .card-container::-webkit-scrollbar {
+                    display: none; 
+            }
+            .card {
+                    flex: 0 0 auto;
+                    width: 300px;
+                    height: 254px;
+                    position: relative;
+                    margin-right: 20px;
+                    padding: 20px;
+                    background-color: var(--container-color);
+                    border-radius: 8px;
+                    transition: 0.6;
+                    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+            }
+            .card h2 {
+                    font-size: 18px;
+                    margin-bottom: 10px;
+            }
+            .card p {
+                    font-size: 14px;
+                    color: #666;
+                    margin-bottom: 15px;
+            }
+            .btn {
+                    display: inline-block;
+                    padding: 10px 15px;
+                    background-color: #3498db;
+                    color: #fff;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    position: absolute;
+                    bottom: 10px;
+                    right: 10px;
+                    font-size: 75%;
+            }
+        }
     }
 
 
+    /* this media tag is complete for the website */
     @media only screen and (min-width: 992px)  {
         body {
             font-family: 'Arial', sans-serif;
@@ -780,7 +985,7 @@
         
         
         #home{
-            margin-top: 10%;
+            margin-top: 8%;
             margin-bottom: 10%;
         }
 
@@ -856,67 +1061,58 @@
 
 
     #projects{
-        .card {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 66.67vh;
-  box-shadow: 0 1.67vh 3.33vh rgba(0, 0, 0, 0.2);
-  padding: 5.33vh;
-  overflow: hidden;
-  border-radius: 1.67vh;
-  background: #212121;
-  border: 0.33vh solid #313131;
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-}
 
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 3.33vh;
-  color: #e8e8e8;
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-}
-
-.content .heading {
-  font-weight: 700;
-  font-size: 5.33vh;
-}
-
-.content .para {
-  line-height: 1.5;
-}
-
-.content .btn {
-  color: #e8e8e8;
-  text-decoration: none;
-  padding: 1.67vh;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  background: #0974f1;
-  border-radius: 0.83vh;
-  box-shadow: 0 0.83ch 1.67vh rgba(0, 0, 0, 0.2);
-}
-
-.card:hover {
-  box-shadow: 0 0 3.33vh rgba(9, 117, 241, 0.8);
-  border-color: #0974f1;
-}
-
-.content .btn:hover {
-  outline: 0.33vh solid #e8e8e8;
-  background: transparent;
-  color: #e8e8e8;
-}
-
-.content .btn:active {
-  box-shadow: none;
-}
-
+        .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
     }
+    .card-container {
+        display: flex;
+        overflow-x: auto;
+        scrollbar-width: none; 
+        -ms-overflow-style: none; 
+    }
+    .card-container::-webkit-scrollbar {
+        display: none; 
+    }
+    .card {
+        flex: 0 0 auto;
+        width: 300px;
+        height: 254px;
+        position: relative;
+        margin-right: 20px;
+        padding: 20px;
+        background-color: var(--container-color);
+        border-radius: 8px;
+        transition: 0.6;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    }
+
+    .card h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .card p {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 15px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: #3498db;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 75%;
+    }
+        }
     }
         
     </style>
@@ -988,15 +1184,8 @@
             document.querySelectorAll('.form-control').forEach(inputField => {
             inputField.style.color = contactFieldTextColor;
         });
-
-            // this will set the background color for the cards in the project section.
-            const projectContainerColor = isDarkMode ? getComputedStyle(document.documentElement).getPropertyValue('--container-color-dark') : getComputedStyle(document.documentElement).getPropertyValue('--container-color');
-            document.querySelectorAll('.card-container').forEach(section => {
-            section.style.backgroundColor = projectContainerColor;
-            });  //not working for now
-
-        }
-    });
+    }
+});
 
         const navLinks = document.querySelectorAll('.navbar-nav a.nav-link');
 
@@ -1125,27 +1314,27 @@ document.addEventListener('DOMContentLoaded', function () {
             <p>These are my projects</p>
 
             <div class="card-container">
-                <section class="project-card">
+                <section class="card">
                     <h2>Project 1</h2>
                     <p>Description of Project 1 goes here. You can provide details about the project.</p>
                     <a href="#" class="btn fab fa-github bg-success"> CODE></a>
                 </section>
-                <div class="project-card">
+                <div class="card">
                     <h2>Project 1</h2>
                     <p>Description of Project 1 goes here. You can provide details about the project.</p>
                     <a href="#" class="btn fab fa-github bg-success"> CODE></a>
                 </div>
-                <div class="project-card">
+                <div class="card">
                     <h2>Project 1</h2>
                     <p>Description of Project 1 goes here. You can provide details about the project.</p>
                     <a href="#" class="btn fab fa-github bg-success"> CODE></a>
                 </div>
-                <div class="project-card">
+                <div class="card">
                     <h2>Project 1</h2>
                     <p>Description of Project 1 goes here. You can provide details about the project.</p>
                     <a href="#" class="btn fab fa-github bg-success"> CODE></a>
                 </div>
-                <div class="project-card">
+                <div class="card">
                     <h2>Project 1</h2>
                     <p>Description of Project 1 goes here. You can provide details about the project.</p>
                     <a href="#" class="btn fab fa-github bg-success"> CODE></a>
