@@ -21,7 +21,7 @@
             color: #fff;
             padding: 1em 0;
             text-align: center;
-            margin-top: 5vh;
+            margin-top: 5%;
         }
 
         .navbar-brand{
@@ -69,7 +69,35 @@
             width: 100%;
         }
 
+        @media only screen and (min-width: 668px) and (max-width: 991px){
+            header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+            margin-top: 7%;
+        }
+    }
 
+        @media only screen and (min-width: 510px) and (max-width: 667px){
+            header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+            margin-top: 9.5%;
+        }
+        }
+
+        @media only screen and (max-width: 509px){
+            header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+            margin-top: 14%;
+        }
+        }
 
     </style>
 </head>
@@ -97,14 +125,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Contact</a>
                 </li>
-                <button id="toggle-mode-button">
-                    <span id="mode-text">🔆</span>
-                </button>
                 <li class="nav-item">
                     <a href="./amv" class="nav-link">EDPC</a>
                 </li>
             </ul>
         </div>
+            <button id="toggle-mode-button">
+                <span id="mode-text">🔆</span>
+            </button>
     </nav>
 
     <header>
