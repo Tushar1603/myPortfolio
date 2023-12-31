@@ -42,6 +42,8 @@
             --form-contact-bg-color: white;
             --form-contact-bg-color-dark: #444;
             --border-color: 0 0 1.67vh rgba(105, 105, 105, 0.791);
+            --root-color: white;
+            --thumb-color: rgb(142, 142, 142);
         }
 
         #toggle-mode-button {
@@ -296,9 +298,7 @@
         scrollbar-width: none; 
         -ms-overflow-style: none; 
     }
-    .card-container::-webkit-scrollbar {
-        display: none; 
-    }
+
     .card {
         flex: 0 0 auto;
         width: 300px;
@@ -328,6 +328,24 @@
         color: #fff;
         text-decoration: none;
         border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar {
+          width: 6px;
+          white-space: wrap;
+          height: 15px;
+
+    }
+    ::-webkit-scrollbar-track {
+          background-color: #f1f1f1;
+          border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+          background-color: #888;
+          border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+          background-color: #555;
     }
 }
 

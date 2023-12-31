@@ -443,7 +443,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const triggerPoint = windowHeight - windowHeight / 4; // Adjust as needed
 
             if (rect.top <= triggerPoint) {
-                element.classList.add('visible');
+                element.classList.add('section2');
             }
         });
     }
