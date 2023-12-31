@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <style>
+        html {
+            lang: en;
+        }
+
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #eaeaea;
@@ -15,18 +20,14 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background-image: url(https://img.freepik.com/free-vector/blue-curve-background_53876-113112.jpg?size=626&ext=jpg&ga=GA1.1.1546980028.1702857600&semt=ais);
-            background-size: cover;
-        }
-
-        .container {
-            max-width: 600px;
+            opacity: 0; 
+            animation: fadeIn 1.5s ease-in-out forwards;
         }
 
         h1 {
             color: #2c3e50;
-            font-size: 3em;
-            margin-bottom: 10px;
+            font-size: 3.5em; 
+            margin-bottom: 15px; 
         }
 
         p {
@@ -35,31 +36,29 @@
             margin-bottom: 30px;
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
         a {
             color: #3498db;
-            text-decoration: none;
+            text-decoration: none; 
             font-weight: bold;
+            transition: color 0.3s ease; 
+        }
+
+        a:hover {
+            color: #1f618d; 
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
-<body>
+<body role="main">
     <section class="404">
-    <div class="container">
-        <h1>Oops! Something went wrong.</h1>
-        <p>The page you are looking for might be under construction or does not exist.</p>
-        <img src="your_custom_image_or_icon.png" alt="404 Error Image">
-        <p>Return to <a href="/">home page</a>.</p>
-    </div>
-</section>
-
+        <h1><span style="color: rgb(255, 105, 105);">404</span> - Page Not Found</h1>
+        <p>Oops! The page you are looking for might be building or doesn't exist at all.</p>
+        <p>However, you can find a lot of information at <a href="/">home page</a>.</p>
+    </section>
 </body>
 </html>
-    
